@@ -16,7 +16,7 @@ class _UserProfilePageState extends State<UserProfilePage> {
       appBar: AppBar(
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
-          onPressed: () => context.pop(),
+          onPressed: () => context.pop("Johan Rivera"),
         ),
       ),
       floatingActionButton: Link(

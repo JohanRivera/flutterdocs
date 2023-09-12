@@ -9,13 +9,40 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  late String name;
+
+  @override
+  void initState() {
+    name = "Sin Nombre";
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
+      body: SafeArea(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                name,
+                style: Theme.of(context).textTheme.bodyLarge,
+              ),
+            ],
+          ),
+        ),
+      ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          context.push('/profile');
+        onPressed: () async {
+          var result = await context.push('/profile');
+          if (result is String) {
+            setState(() {
+              name = result;
+            });
+          }
         },
         child: const Icon(
           Icons.person,
