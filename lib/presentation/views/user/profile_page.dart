@@ -24,7 +24,7 @@ class _UserProfilePageState extends State<UserProfilePage> {
         builder: (context, followLink) => FloatingActionButton(
           onPressed: followLink,
           child: const Icon(
-            Icons.send_and_archive,
+            Icons.language,
           ),
         ),
         target: LinkTarget.blank,

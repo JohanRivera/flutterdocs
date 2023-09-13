@@ -12,6 +12,10 @@ final routerApp = GoRouter(
     GoRoute(
       path: "/profile",
       builder: (context, state) => const UserProfilePage(),
+    ),
+    GoRoute(
+      path: "/listview",
+      builder: (context, state) => const ListViewPage(),
     )
   ],
   debugLogDiagnostics: true,
