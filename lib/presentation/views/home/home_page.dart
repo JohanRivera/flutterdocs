@@ -46,21 +46,26 @@ class _HomePageState extends State<HomePage> {
                 ),
                 trailing: const Icon(Icons.arrow_forward),
               ),
+            ),
+            Card(
+              elevation: 20.0,
+              child: ListTile(
+                onTap: () => context.push("/gridview"),
+                leading: const Icon(
+                  Icons.list,
+                ),
+                title: const Text(
+                  "Vista de GridView",
+                  textAlign: TextAlign.center,
+                ),
+                subtitle: const Text(
+                  "Prueba gridview normal",
+                  textAlign: TextAlign.center,
+                ),
+                trailing: const Icon(Icons.arrow_forward),
+              ),
             )
           ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () async {
-          var result = await context.push('/profile');
-          if (result is String) {
-            setState(() {
-              name = result;
-            });
-          }
-        },
-        child: const Icon(
-          Icons.person,
         ),
       ),
     );
